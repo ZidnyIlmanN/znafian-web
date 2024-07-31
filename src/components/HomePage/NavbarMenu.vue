@@ -137,7 +137,7 @@ export default {
     right: -100%;
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(2px);
-    width: 20%;
+    width: 30%;
     height: 100vh;
     transition: 0.3s;
   }
