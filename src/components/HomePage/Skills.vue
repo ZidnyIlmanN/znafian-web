@@ -75,6 +75,7 @@ export default {
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .service-container .box {
