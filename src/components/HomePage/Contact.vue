@@ -46,15 +46,16 @@ export default {
 .contact .social-text p {
     color: white;
     max-width: 500px;
-    margin: 10px auto;
+    margin: 1rem auto;
     line-height: 28px;
-    font-size: 14px;
+    font-size: 1rem;
 }
 
 .social {
     display: flex;
     justify-content: center;
     margin: 2rem 0;
+    width: 100%;
 }
 
 .social a {
@@ -85,7 +86,37 @@ export default {
 
 .copyright {
     margin-top: 1rem;
-    font-size: 13px;
+    font-size: 1rem;
     color: #aaa;
+}
+@media (max-width: 1366px) {
+    .contact .social-text h3{
+        font-size: 1.6rem;
+    }
+    .contact .social-text p {
+        font-size: .8rem;
+        margin: .8rem auto;
+    }
+    .copyright {
+        font-size: .8rem;
+    }
+    .social {
+        margin: 1.5rem 0;
+    }
+}
+@media (max-width: 768px) {
+    .contact .social-text h3{
+        font-size: 1.4rem;
+    }
+    .contact .social-text p {
+        font-size: .6rem;
+        margin: .6rem auto;
+    }
+    .copyright {
+        font-size: .6rem;
+    }
+    .social {
+        margin: 1rem 0;
+    }
 }
 </style>
