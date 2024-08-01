@@ -89,34 +89,62 @@
     line-height: 2rem;
     margin: 0.5rem 0 2rem;
   }
-  
+  @media (max-width: 1366px) {
+    .heading span {
+      font-size: 1.8rem;
+    }
+    .heading h2 {
+      font-size: 2.2rem;
+    }
+    .education-text h3 {
+      font-size: 1.6rem;
+    }
+    .education-text h2 {
+      font-size: 1rem;
+    }
+    .education-text p {
+      font-size: 1.2rem;
+    }
+  }
   @media (max-width: 768px) {
+    .heading span {
+      font-size: 1.6rem;
+    }
+    .heading h2 {
+      font-size: 2rem;
+    }
+    .education-text h3 {
+      font-size: 1.4rem;
+    }
+    .education-text h2 {
+      font-size: .8rem;
+    }
+    
+    .education-text p {
+      font-size: 1rem;
+    }
     .container {
       flex-direction: column;
       align-items: center;
     }
-  
-    .education-text p {
-      text-align: center;
-    }
-  }
+}
   
   @media (max-width: 450px) {
     .heading span {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
     }
   
     .heading h2 {
       font-size: 2rem;
     }
-  
     .education-text h3 {
-      font-size: 1.6rem;
-    }
-  
-    .education-text p {
-      font-size: 1.2rem;
-    }
+    font-size: 1.2rem;
   }
-  </style>
-  
+    .education-text h2 {
+      font-size: .7rem;
+    }
+    .education-text p {
+      font-size: .8rem;
+    }
+}
+</style>
