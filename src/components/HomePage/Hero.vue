@@ -2,7 +2,7 @@
   <section class="home" id="home">
     <div class="home-text">
       <h3>Hello, I'm</h3>
-      <h1>Zidny Ilman Nafi'an</h1>
+      <h1 class="animated-text">Zidny Ilman Nafi'an</h1>
       <h5>Students of <span>Sepuluh Nopember Institute of Technology</span></h5>
       <p>I am a Sepuluh Nopember Institute of Technology (ITS) student, majoring in Information Technology class of 2022</p>
     </div>
@@ -38,6 +38,40 @@ section {
   font-size: 3rem;
   line-height: 1;
   font-weight: 600;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+
+.home-text h1::before {
+  content: '';
+  width: 0%;
+  height: 100%;
+  background: #c16d00;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: animate 5s infinite;
+  border-right: 5px solid #ffffff;
+}
+
+@keyframes animate {
+  0% {
+    width: 100%;
+    z-index: 1;
+  }
+  50% {
+    width: 0%;
+    z-index: 1;
+  }
+  51% {
+    width: 0%;
+    z-index: -1;
+  }
+  100% {
+    width: 100%;
+    z-index: -1;
+  }
 }
 
 .home-text h5 {
@@ -69,11 +103,49 @@ span {
   height: auto;
 }
 
+@media (max-width: 1366px) {
+  .home-text h3{
+    font-size: 1.5rem;
+  }
+  .home-text h1{
+    font-size: 2.5rem;
+  }
+  .home-text h5{
+    font-size: 1.6rem;
+  }
+  .home-text p{
+    font-size: 1.3rem;
+  }
+  .home-text h1::before {
+  height: 100%;
+  .aing {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+}
+
 @media (max-width: 768px) {
   .home {
     grid-template-columns: 1fr;
     text-align: center;
+    font-size: 55%;
   }
+  .home-text h3{
+    font-size: 1.2rem;
+  }
+  .home-text h1{
+    font-size: 1.8rem;
+  }
+  .home-text h5{
+    font-size: 1.3rem;
+  }
+  .home-text p{
+    font-size: 1rem;
+  }
+  .home-text h1::before {
+  height: 100%;
+}
   .aing {
     width: 80%;
     margin: 0 auto;
