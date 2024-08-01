@@ -52,6 +52,7 @@ export default {
 .service {
   padding: 100px 18%;
   color: #ffffff;
+  
 }
 
 .heading {
@@ -118,8 +119,27 @@ export default {
   font-size: 1.4rem;
   margin: 1rem 0;
 }
-
+@media (max-width: 1366px) {
+  .heading span {
+    font-size: 1.8rem;
+  }
+  .heading h2 {
+    font-size: 2.2rem;
+  }
+  .service-container .box h3 {
+    font-size: 1.6rem;
+  }
+  .service-container .box p {
+    font-size: 1.2rem;
+  }
+}
 @media (max-width: 768px) {
+  .heading span {
+      font-size: 1.6rem;
+    }
+  .heading h2 {
+    font-size: 2rem;
+  }
   .service-container .box {
     flex: 1 1 45%;
   }
@@ -128,9 +148,22 @@ export default {
     width: 120px;
     height: 120px;
   }
+  .service-container .box h3 {
+    font-size: 1.4rem;
+  }
+  .service-container .box p {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 450px) {
+  .heading span {
+      font-size: 1.4rem;
+    }
+  
+  .heading h2 {
+    font-size: 2rem;
+  }
   .service-container .box {
     flex: 1 1 90%;
     margin: 1rem;
