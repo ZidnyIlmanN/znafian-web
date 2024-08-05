@@ -1,27 +1,27 @@
 <template>
-    <section class="education" id="about">
-      <div class="heading">
-        <span>Tentang Saya</span>
-        <h2>Pendidikan Terakhir - Saat Ini</h2>
+  <section class="education" id="about">
+    <div class="heading">
+      <span>About Me</span>
+      <h2>Education Background - Present</h2>
+    </div>
+    <div class="container">
+      <div class="education-img">
+        <!-- <i class="fa-solid fa-school" alt=""></i> -->
       </div>
-      <div class="container">
-        <div class="education-img">
-          <!-- <i class="fa-solid fa-school" alt=""></i> -->
-        </div>
-        <div class="education-text">
-          <i class="fa-solid fa-school" alt=""></i>
-          <h3>SMAN 3 Subang</h3>
-          <h2>2019-2022</h2>
-          <p>Sebelumnya, saya belajar selama 3 tahun di SMAN 3 Subang, Jawa Barat. Di sana saya mengambil jurusan IPA, mulai sekolah pada tahun 2019 dan lulus pada tahun 2022.</p>
+      <div class="education-text">
+        <i class="fa-solid fa-school" alt=""></i>
+        <h3>Senior High School 3 Subang</h3>
+        <h2>2019-2022</h2>
+        <p>Previously, I studied for 3 years at SMAN 3 Subang, West Java. There, I took the Science major, starting school in 2019 and graduating in 2022.</p>
 
-          <i class="fa-solid fa-university" alt=""></i>
-          <h3>Institut Teknologi Sepuluh Nopember</h3>
-          <h2>2022-Now</h2>
-          <p>Sekarang saya adalah mahasiswa dari Institut Teknologi Sepuluh Nopember (ITS), jurusan Teknologi Informasi, angkatan 2022. Saat ini saya berada di semester 5 dan terus berupaya untuk mengembangkan keterampilan serta pengetahuan saya di bidang teknologi informasi.</p>
-        </div>
+        <i class="fa-solid fa-university" alt=""></i>
+        <h3>Sepuluh Nopember Institute of Technology</h3>
+        <h2>2022-Now</h2>
+        <p>Currently, I am a student at Sepuluh Nopember Institute of Technology (ITS), majoring in Information Technology, class of 2022. I am currently in my 5th semester and continue to strive to develop my skills and knowledge in the field of information technology.</p>
       </div>
-    </section>
-  </template>
+    </div>
+  </section>
+</template>
   
   <script>
   export default {
@@ -38,7 +38,7 @@
   
   .heading {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
   
   .heading span {
