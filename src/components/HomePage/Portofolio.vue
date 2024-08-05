@@ -121,6 +121,7 @@ section {
   transition: 0.2s linear;
   cursor: pointer;
   font-size: .8rem;
+  font-weight: 600;
 }
 
 .menu button.active {
