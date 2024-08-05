@@ -56,7 +56,7 @@ export default {
           imgSrc: require('@/assets/vuejs.png'),
           altText: 'Vue.js',
           title: 'Vue.js',
-          description: 'Vue.js is a framework that I master.'
+          description: 'Vue.js is a framework for a website development that I master.'
         }
       ]
     };
