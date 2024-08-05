@@ -1,10 +1,17 @@
 <template>
     <section class="contact" id="contact">
         <div class="social-text">
-            <h3>Let's Connect!</h3>
+            
+            <h3>
+                <span>Let's</span> <span>Connect</span>
+                <span>!</span>
+                <span>.</span>
+                <span>.</span>
+            </h3>
             <p>Want to work together? Find me on these platforms:</p>
         </div>
-        <div class="social">    
+        <div class="social">
+            <a href="https://github.com/ZidnyIlmanN" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>  </a>
             <a href="https://www.linkedin.com/in/zidny-ilman-2648b9248" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.instagram.com/jidniin/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
             <a href="https://twitter.com/lilmann02" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
@@ -50,7 +57,28 @@ export default {
     line-height: 28px;
     font-size: 1rem;
 }
-
+.contact .social-text h3 span {
+position: relative;
+top: 5px;
+animation: bounce 0.4s ease infinite alternate;
+}
+.social-text h3 span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+.social-text h3 span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+.social-text h3 span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+.social-text h3 span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+    @keyframes bounce {
+        100%{
+            top: -5px;
+    }
+}
 .social {
     display: flex;
     justify-content: center;
