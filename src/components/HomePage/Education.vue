@@ -23,72 +23,72 @@
   </section>
 </template>
   
-  <script>
+<script>
   export default {
     name: 'EducationMenu'
   }
-  </script>
+</script>
   
-  <style scoped>
-  .education {
-    background-color: #393E46;
-    padding: 100px 18%;
-    color: #ffffff;
-  }
+<style scoped>
+.education {
+  background-color: #393E46;
+  padding: 100px 18%;
+  color: #ffffff;
+}
   
-  .heading {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
+.heading {
+  text-align: center;
+  margin-bottom: 4rem;
+}
   
-  .heading span {
-    color: var(--primary);
-    font-size: 2rem;
-    font-weight: 600;
-  }
+.heading span {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 600;
+}
   
-  .heading h2 {
-    font-size: 2.4rem;
-    font-weight: 500;
-  }
+.heading h2 {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
   
-  .container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    align-items: center;
-    justify-content: center;
-  }
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
   
-  .education-text {
-    flex: 1 1 20rem;
-    text-align: center;
-  }
+.education-text {
+  flex: 1 1 20rem;
+  text-align: center;
+}
   
-  .education-text i {
-    font-size: 5rem;
-    text-shadow: 1px 1px 10px rgb(41, 41, 41);
-    color: #c16d00;
-    margin: 0.5rem 0 1rem;
-  }
+.education-text i {
+  font-size: 5rem;
+  text-shadow: 1px 1px 10px rgb(41, 41, 41);
+  color: #c16d00;
+  margin: 0.5rem 0 1rem;
+}
   
-  .education-text h3 {
-    font-size: 1.8rem;
-    margin-bottom: .3rem;
-  }
+.education-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: .3rem;
+}
 
-  .education-text h2 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    font-weight: 500;
-  }
+.education-text h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
   
-  .education-text p {
-    font-size: 1.4rem;
-    color: #c0c0c0;
-    line-height: 2rem;
-    margin: 0.5rem 0 2rem;
-  }
+.education-text p {
+  font-size: 1.4rem;
+  color: #c0c0c0;
+  line-height: 2rem;
+  margin: 0.5rem 0 2rem;
+}
   @media (max-width: 1366px) {
     .heading span {
       font-size: 1.8rem;
