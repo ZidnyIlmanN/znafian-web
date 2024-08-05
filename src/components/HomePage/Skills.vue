@@ -2,21 +2,25 @@
   <!-- Sub Service -->
   <section class="service" id="myskill">
     <div class="heading">
-      <span>Keahlian Saya</span>
-      <h2>Keahlian yang Saya Kuasai</h2>
+      <span>My Skills</span>
+      <h2>Skills I Possess</h2>
     </div>
   </section>
-  
-  <div class="service-container">
-    <div class="box" v-for="(skill, index) in skills" :key="index">
-      <div class="box-img">
-        <img :src="skill.imgSrc" :alt="skill.altText">
+
+  <div class="service-carousel">
+    <div class="service-container">
+      <div class="box" v-for="(skill, index) in skills" :key="index">
+        <div class="box-img">
+          <img :src="skill.imgSrc" :alt="skill.altText">
+        </div>
+        <h3>{{ skill.title }}</h3>
+        <p>{{ skill.description }}</p>
       </div>
-      <h3>{{ skill.title }}</h3>
-      <p>{{ skill.description }}</p>
     </div>
   </div>
 </template>
+
+
 
 <script>
 export default {
@@ -28,19 +32,31 @@ export default {
           imgSrc: require('@/assets/PS.svg'),
           altText: 'Photoshop',
           title: 'Photoshop',
-          description: 'Saya menguasai dasar-dasar pengeditan di perangkat lunak Photoshop, yang merupakan perangkat lunak pengeditan default saya.'
+          description: 'I possess basic editing skills in Photoshop, which is my default editing software.'
         },
         {
           imgSrc: require('@/assets/AI.svg'),
           altText: 'Adobe Illustrator',
           title: 'Adobe Illustrator',
-          description: 'Saya menguasai dasar-dasar pengeditan di perangkat lunak Adobe Illustrator.'
+          description: 'I possess basic editing skills in Adobe Illustrator.'
         },
         {
           imgSrc: require('@/assets/LR.svg'),
           altText: 'Lightroom',
           title: 'Lightroom',
-          description: 'Saya menguasai dasar-dasar pengeditan di perangkat lunak Lightroom.'
+          description: 'I possess basic editing skills in Lightroom.'
+        },
+        {
+          imgSrc: require('@/assets/Canva.png'),
+          altText: 'Canva',
+          title: 'Canva',
+          description: 'Canva is another editing app that I master.'
+        },
+        {
+          imgSrc: require('@/assets/vuejs.png'),
+          altText: 'Vue.js',
+          title: 'Vue.js',
+          description: 'Vue.js is a framework that I master.'
         }
       ]
     };
@@ -48,16 +64,17 @@ export default {
 }
 </script>
 
+
+
 <style scoped>
 .service {
   padding: 100px 18%;
   color: #ffffff;
-  
 }
 
 .heading {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .heading span {
@@ -71,25 +88,45 @@ export default {
   font-weight: 500;
 }
 
+.service-carousel {
+  display: flex;
+}
+
 .service-container {
   display: flex;
-  flex-wrap: wrap;
+  overflow-x: auto;
   gap: 1.5rem;
-  justify-content: center;
+  padding: 4rem;
+  scroll-snap-type: x mandatory;
   margin-bottom: 2rem;
 }
 
+.service-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.service-container::-webkit-scrollbar-thumb {
+  background-color: #ffb300;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.service-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 .service-container .box {
-  flex: 1 1 20rem;
+  flex: 0 0 auto;
+  width: 20rem; /* Fixed width for each skill box */
   background: var(--primary);
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 2rem;
   border-radius: 0.8rem;
   transition: transform 0.3s, background 0.3s;
+  scroll-snap-align: center;
 }
 
 .service-container .box:hover {
@@ -119,6 +156,7 @@ export default {
   font-size: 1.4rem;
   margin: 1rem 0;
 }
+
 @media (max-width: 1366px) {
   .heading span {
     font-size: 1.8rem;
@@ -133,40 +171,30 @@ export default {
     font-size: 1.2rem;
   }
 }
+
 @media (max-width: 768px) {
   .heading span {
-      font-size: 1.6rem;
-    }
+    font-size: 1.6rem;
+  }
   .heading h2 {
     font-size: 2rem;
   }
   .service-container .box {
-    flex: 1 1 45%;
-  }
-
-  .service-container .box .box-img {
-    width: 120px;
-    height: 120px;
-  }
-  .service-container .box h3 {
-    font-size: 1.4rem;
-  }
-  .service-container .box p {
-    font-size: 1rem;
+    width: 45%; /* Adjust width to fit better on smaller screens */
   }
 }
 
 @media (max-width: 450px) {
   .heading span {
-      font-size: 1.4rem;
-    }
+    font-size: 1.4rem;
+  }
   
   .heading h2 {
     font-size: 2rem;
   }
   .service-container .box {
-    flex: 1 1 90%;
-    margin: 1rem;
+    width: 90%; /* Adjust width to fit better on small screens */
+    margin: 0.5rem;
   }
 
   .service-container .box .box-img {
