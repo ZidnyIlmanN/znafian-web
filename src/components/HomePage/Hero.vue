@@ -35,7 +35,7 @@ section {
 
 .home-text h1 {
   margin: 10px 0 25px;
-  font-size: 3rem;
+  font-size: 2.7rem;
   line-height: 1;
   font-weight: 600;
   position: relative;
@@ -58,11 +58,11 @@ section {
 @keyframes animate {
   0% {
     width: 100%;
-    z-index: 1;
+    z-index: -1;
   }
   50% {
     width: 0%;
-    z-index: 1;
+    z-index: -1;
   }
   51% {
     width: 0%;
@@ -135,7 +135,7 @@ span {
     font-size: 1.2rem;
   }
   .home-text h1{
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
   .home-text h5{
     font-size: 1.3rem;
