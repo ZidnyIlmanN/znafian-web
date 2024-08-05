@@ -1,8 +1,8 @@
 <template>
     <section class="contact" id="contact">
         <div class="social-text">
-            <h3>Hubungi Saya</h3>
-            <p>Jika Anda membutuhkan sesuatu, Anda bisa menghubungi saya di media sosial berikut ini</p>
+            <h3>Let's Connect!</h3>
+            <p>Want to work together? Find me on these platforms:</p>
         </div>
         <div class="social">    
             <a href="https://www.linkedin.com/in/zidny-ilman-2648b9248" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
@@ -14,7 +14,7 @@
         <!-- Tambahkan link tambahan jika ada -->
         </div>
         <div class="copyright">
-            <p>&#169;<span>ZNAFIAN</span> Hak Cipta Dilindungi.</p>
+            <p>&#169;<span>2024 ZNAFIAN</span> All rights reserved.</p>
         </div>
     </section>
 </template>
@@ -102,6 +102,7 @@ export default {
     }
     .social {
         margin: 1.5rem 0;
+        width: 90%;
     }
 }
 @media (max-width: 768px) {
@@ -109,7 +110,7 @@ export default {
         font-size: 1.4rem;
     }
     .contact .social-text p {
-        font-size: .6rem;
+        font-size: .7rem;
         margin: .6rem auto;
     }
     .copyright {
@@ -117,6 +118,7 @@ export default {
     }
     .social {
         margin: 1rem 0;
+        width: 80%;
     }
 }
 </style>
