@@ -1,4 +1,5 @@
-<template>
+works: [
+  <template>
   <!-- Sub Service -->
   <section class="service" id="myskill">
     <div class="heading">
@@ -9,7 +10,7 @@
 
   <div class="service-carousel">
     <div class="service-container">
-      <div class="box" v-for="(skill, index) in repeatedSkills" :key="index">
+      <div class="box" v-for="(skill, index) in skills" :key="index">
         <div class="box-img">
           <img :src="skill.imgSrc" :alt="skill.altText">
         </div>
@@ -19,6 +20,8 @@
     </div>
   </div>
 </template>
+
+
 
 <script>
 export default {
@@ -54,18 +57,15 @@ export default {
           imgSrc: require('@/assets/vuejs.png'),
           altText: 'Vue.js',
           title: 'Vue.js',
-          description: 'Vue.js is a framework that I master.'
+          description: 'Vue.js is a framework for a website development that I master.'
         }
       ]
     };
-  },
-  computed: {
-    repeatedSkills() {
-      return [...this.skills, ...this.skills, ...this.skills, ...this.skills, ...this.skills];
-    }
   }
 }
 </script>
+
+
 
 <style scoped>
 .service {
@@ -100,23 +100,13 @@ export default {
   padding-top: .2rem;
 }
 
-@keyframes scrollleft {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 .service-container {
   display: flex;
+  overflow-x: auto;
   gap: 1.5rem;
   padding: 4rem;
-  margin-bottom: 2rem;
-  position: relative;
-  animation: scrollleft 25s linear infinite alternate;
   scroll-snap-type: x mandatory;
+  margin-bottom: 2rem;
 }
 
 .service-container::-webkit-scrollbar {
@@ -131,9 +121,6 @@ export default {
 
 .service-container::-webkit-scrollbar-track {
   background: transparent;
-}
-.service-container:hover {
-  animation-play-state: paused;
 }
 
 .service-container .box {
@@ -193,7 +180,6 @@ export default {
     background: var(--bg);
   }
   .service-container .box {
-    margin: 0.6rem;
     width: 19rem; /* Adjust width to fit better on smaller screens */
   }
   .service-container .box h3 {
@@ -211,12 +197,8 @@ export default {
   .heading h2 {
     font-size: 2rem;
   }
-  .service-container {
-    padding: 3rem;
-  }
   .service-container .box {
-    margin: 0.6rem;
-    width: 19rem; /* Adjust width to fit better on smaller screens */
+    width: 17rem; /* Adjust width to fit better on smaller screens */
   }
 }
 
@@ -224,6 +206,7 @@ export default {
   .heading span {
     font-size: 1.4rem;
   }
+  
   .heading h2 {
     font-size: 2rem;
   }
@@ -231,13 +214,16 @@ export default {
     width: 16rem; /* Adjust width to fit better on small screens */
     margin: 0.5rem;
   }
+
   .service-container .box .box-img {
     width: 100px;
     height: 100px;
   }
+
   .service-container .box h3 {
     font-size: 1.6rem;
   }
+
   .service-container .box p {
     font-size: 1.2rem;
   }
