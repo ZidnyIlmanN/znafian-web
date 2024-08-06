@@ -2,18 +2,13 @@
   <section class="education" id="about">
     <div class="heading">
       <span>About Me</span>
-      <h2>Education Background - Present</h2>
+      <h2>Education Background</h2>
     </div>
     <div class="container">
       <div class="education-img">
         <!-- <i class="fa-solid fa-school" alt=""></i> -->
       </div>
       <div class="education-text">
-        <i class="fa-solid fa-school" alt=""></i>
-        <h3>Senior High School 3 Subang</h3>
-        <h2>2019-2022</h2>
-        <p>Previously, I studied for 3 years at SMAN 3 Subang, West Java. There, I took the Science major, starting school in 2019 and graduating in 2022.</p>
-
         <i class="fa-solid fa-university" alt=""></i>
         <h3>Sepuluh Nopember Institute of Technology</h3>
         <h2>2022-Now</h2>
@@ -87,7 +82,7 @@
   font-size: 1.4rem;
   color: #c0c0c0;
   line-height: 2rem;
-  margin: 0.5rem 0 2rem;
+  margin: 0.5rem 0 .5rem;
 }
   @media (max-width: 1366px) {
     .heading span {
