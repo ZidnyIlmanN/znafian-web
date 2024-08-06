@@ -5,14 +5,13 @@
       <h2>Education Background</h2>
     </div>
     <div class="container">
-      <div class="education-img">
-        <!-- <i class="fa-solid fa-school" alt=""></i> -->
-      </div>
       <div class="education-text">
-        <i class="fa-solid fa-university" alt=""></i>
-        <h3>Sepuluh Nopember Institute of Technology</h3>
-        <h2>2022-Now</h2>
-        <p>Currently, I am a student at Sepuluh Nopember Institute of Technology (ITS), majoring in Information Technology, class of 2022. I am currently in my 5th semester and continue to strive to develop my skills and knowledge in the field of information technology.</p>
+        <div>
+          <img class="education-img" :src="require('@/assets/Lambang ITS.png')" alt="Logo" />
+        </div>
+          <h3>Sepuluh Nopember Institute of Technology</h3>
+          <h2>2022-Now</h2>
+          <p>Currently, I am a student at Sepuluh Nopember Institute of Technology (ITS), majoring in Information Technology, class of 2022. I am currently in my 5th semester and continue to strive to develop my skills and knowledge in the field of information technology.</p>
       </div>
     </div>
   </section>
@@ -30,10 +29,24 @@
   padding: 100px 18%;
   color: #ffffff;
 }
-  
+
+.education img{
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  margin-bottom: 1rem;
+  padding: .5rem;
+  animation: pulse 3s infinite linear;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 5px rgba(0,0,0,0.5); }
+  50% { box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+  100% { box-shadow: 0 0 5px rgba(0,0,0,0.5); }
+}
 .heading {
   text-align: center;
-  margin-bottom: 4rem;
+  
 }
   
 .heading span {
@@ -45,6 +58,7 @@
 .heading h2 {
   font-size: 2.4rem;
   font-weight: 500;
+  margin-bottom: 4rem;
 }
   
 .container {
@@ -91,6 +105,10 @@
     .heading h2 {
       font-size: 2.2rem;
     }
+    .education img{
+      width: 125px;
+      height: 125px;
+    }
     .education-text h3 {
       font-size: 1.6rem;
     }
@@ -107,6 +125,10 @@
     }
     .heading h2 {
       font-size: 2rem;
+    }
+    .education img{
+      width: 100px;
+      height: 100px;
     }
     .education-text h3 {
       font-size: 1.4rem;
