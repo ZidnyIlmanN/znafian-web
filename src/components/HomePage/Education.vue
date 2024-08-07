@@ -1,7 +1,13 @@
 <template>
   <section class="education" id="about">
     <div class="heading">
-      <span>About Me</span>
+      <p>About</p>
+      <div class="words">
+        <span>Me</span>
+        <span>Znafian</span>
+      </div>
+    </div>
+    <div class="heading-2">
       <h2>Education Background</h2>
     </div>
     <div class="container">
@@ -24,6 +30,7 @@
 </script>
   
 <style scoped>
+
 .education {
   background-color: #393E46;
   padding: 100px 18%;
@@ -40,27 +47,57 @@
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 5px rgba(0,0,0,0.5); }
+  0% { box-shadow: 0 0 5px rgba(165, 209, 249, 0.5); }
   50% { box-shadow: 0 0 20px rgba(0,0,0,0.5); }
-  100% { box-shadow: 0 0 5px rgba(0,0,0,0.5); }
+  51% { box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+  100% { box-shadow: 0 0 5px rgba(165, 209, 249, 0.5); }
 }
 .heading {
-  text-align: center;
-  
+  display: flex;
+  justify-content: center;
+  box-sizing: content-box;
+  height: 2rem; 
 }
-  
-.heading span {
+
+.words{
+  overflow: hidden;
+}
+
+.heading p {
   color: var(--primary);
   font-size: 2rem;
   font-weight: 600;
+  display: flex;
+}
+.heading .words span {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 600;
+  display: block;
+  height: 100%;
+  padding-left: 10px;
+  animation: spin_words 4s infinite;
+}
+@keyframes spin_words {
+  10%{
+    transform: translateY(-110%);
+  }
+  50%{
+    transform: translateY(-100%);
+  }
+  10%{
+    transform: translateY(-110%);
+  }
 }
   
-.heading h2 {
+.heading-2 {
+  text-align: center;
+}
+.heading-2 h2 {
   font-size: 2.4rem;
   font-weight: 500;
   margin-bottom: 4rem;
 }
-  
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -84,6 +121,7 @@
 .education-text h3 {
   font-size: 1.8rem;
   margin-bottom: .3rem;
+  color: rgb(165, 209, 249);
 }
 
 .education-text h2 {
@@ -99,12 +137,16 @@
   margin: 0.5rem 0 .5rem;
 }
   @media (max-width: 1366px) {
-    .heading span {
+    .heading p{
       font-size: 1.8rem;
     }
-    .heading h2 {
+    .heading .words span {
+      font-size: 1.8rem;
+    }
+    .heading-2 h2 {
       font-size: 2.2rem;
     }
+    
     .education img{
       width: 125px;
       height: 125px;
@@ -120,10 +162,13 @@
     }
   }
   @media (max-width: 768px) {
-    .heading span {
+    .heading p{
       font-size: 1.6rem;
     }
-    .heading h2 {
+    .heading .words span {
+      font-size: 1.6rem;
+    }
+    .heading-2 h2 {
       font-size: 2rem;
     }
     .education img{
@@ -147,11 +192,13 @@
 }
   
   @media (max-width: 450px) {
-    .heading span {
+    .heading p{
       font-size: 1.4rem;
     }
-  
-    .heading h2 {
+    .heading .words span {
+      font-size: 1.4rem;
+    }
+    .heading-2 h2 {
       font-size: 2rem;
     }
     .education-text h3 {
