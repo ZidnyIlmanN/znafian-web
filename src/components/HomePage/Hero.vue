@@ -3,7 +3,7 @@
     <div class="home-text">
       <h3 class="animated-text">Hello, I'm</h3>
       <h1 class="animated-text">Zidny Ilman Nafi'an</h1>
-      <h5>Students of <span>Sepuluh Nopember Institute of Technology</span></h5>
+      <h5 class="animated-text">Students of <span>Sepuluh Nopember Institute of Technology</span></h5>
       <p class="animated-text">I am a Sepuluh Nopember Institute of Technology (ITS) student, majoring in Information Technology class of 2022</p>
     </div>
     <div class="aing">
