@@ -254,13 +254,13 @@ span {
 .animated-text{
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 1s ease-in-out;
+  transition: opacity .6s ease-in-out;
 }
 
 .animated-img {
   opacity: 0;
   transform: translateX(-10px);
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transition: opacity .6s ease-in-out, transform .6s ease-in-out;
 }
 
 .fade-in {
