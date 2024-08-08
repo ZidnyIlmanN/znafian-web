@@ -75,7 +75,7 @@
   font-weight: 600;
   display: block;
   height: 100%;
-  padding-left: 10px;
+  padding-left: 8px;
   animation: spin_words 4s infinite;
 }
 @keyframes spin_words {
