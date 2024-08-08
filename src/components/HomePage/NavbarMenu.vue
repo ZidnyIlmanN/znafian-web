@@ -139,7 +139,7 @@ export default {
     backdrop-filter: blur(2px);
     width: 30%;
     height: 100vh;
-    transition: 0.3s;
+    transition: 0.3s ease-in-out;
   }
   .menu-open {
     right: 0;
