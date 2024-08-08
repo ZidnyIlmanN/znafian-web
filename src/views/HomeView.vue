@@ -29,7 +29,7 @@ export default {
         ContactMenu
     },
     mounted() {
-    this.updatePageTitle('Hello.. how are you!');
+    this.updatePageTitle('znafian');
     },
     methods: {
         updatePageTitle(newTitle) {
