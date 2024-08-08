@@ -111,7 +111,7 @@ export default {
 .col {
   opacity: 0;
   transform: translateY(20px);
-  transition: transform 1s, opacity 1s;
+  transition: transform .6s, opacity .6s;
 }
 
 .col.animate {
