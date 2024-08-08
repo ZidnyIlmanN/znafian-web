@@ -22,7 +22,7 @@
         WebDev
       </button>
     </div>
-    <div class="portfolio-content">
+    <div class="portfolioContent" ref="portfolioSection">
       <div class="col" v-for="(work, index) in filteredWorks" :key="index">
         <img :src="work.imgSrc" :alt="work.title">
         <div class="layer">
@@ -40,18 +40,18 @@ export default {
   data() {
     return {
       works: [
-      { imgSrc: require('@/assets/Karya1.jpg'), title: 'Graphic Design', description: 'Pertamina EP Subang Field Healthy Exercise Poster' },
-      { imgSrc: require('@/assets/Karya2.jpg'), title: 'Graphic Design', description: 'Pertamina EP Subang Field Healthy Exercise Poster' },
-      { imgSrc: require('@/assets/Karya3.jpg'), title: 'Graphic Design', description: 'Pertamina 65th Anniversary Broadcast Poster' },
-      { imgSrc: require('@/assets/Karya9.jpg'), title: 'Graphic Design', description: 'Pertamina EP Subang Field Water Conservation Broadcast Poster' },
-      { imgSrc: require('@/assets/Karya10.jpg'), title: 'Graphic Design', description: 'Pertamina 65th Anniversary Broadcast Poster' },
-      { imgSrc: require('@/assets/Karya4.jpg'), title: 'Graphic Design', description: 'Poster for the 76th Indonesian Independence Day Competition for Pertamina Subang Field Employees, Partners, and Families' },
-      { imgSrc: require('@/assets/Karya5.jpg'), title: 'Graphic Design', description: '1st Place Winner Poster for the Indonesian Independence Day Competition at Pertamina Subang Field' },
-      { imgSrc: require('@/assets/Karya6.jpg'), title: 'Graphic Design', description: 'Poster for the Indonesian Independence Day Competition at Pertamina Subang Field' },
-      { imgSrc: require('@/assets/Karya7.jpg'), title: 'Graphic Design', description: 'Social Media Marketing Poster' },
-      { imgSrc: require('@/assets/Karya8.jpg'), title: 'Graphic Design', description: 'Poster for a Joint Movie Screening of the G30S/PKI Film' },
-      { imgSrc: require('@/assets/Porto-Newsbite.png'), title: 'WebDev', description: 'My news website built using HTML, CSS, Vue.js as the framework, Express.js for the backend, and MySQL.' },
-      { imgSrc: require('@/assets/Porto-znafian.png'), title: 'WebDev', description: 'My portfolio website built using HTML, CSS, and Vue.js as the framework.' }
+        { imgSrc: require('@/assets/Karya1.jpg'), title: 'Graphic Design', description: 'Pertamina EP Subang Field Healthy Exercise Poster' },
+        { imgSrc: require('@/assets/Karya2.jpg'), title: 'Graphic Design', description: 'Pertamina EP Subang Field Healthy Exercise Poster' },
+        { imgSrc: require('@/assets/Karya3.jpg'), title: 'Graphic Design', description: 'Pertamina 65th Anniversary Broadcast Poster' },
+        { imgSrc: require('@/assets/Karya9.jpg'), title: 'Graphic Design', description: 'Pertamina EP Subang Field Water Conservation Broadcast Poster' },
+        { imgSrc: require('@/assets/Karya10.jpg'), title: 'Graphic Design', description: 'Pertamina 65th Anniversary Broadcast Poster' },
+        { imgSrc: require('@/assets/Karya4.jpg'), title: 'Graphic Design', description: 'Poster for the 76th Indonesian Independence Day Competition for Pertamina Subang Field Employees, Partners, and Families' },
+        { imgSrc: require('@/assets/Karya5.jpg'), title: 'Graphic Design', description: '1st Place Winner Poster for the Indonesian Independence Day Competition at Pertamina Subang Field' },
+        { imgSrc: require('@/assets/Karya6.jpg'), title: 'Graphic Design', description: 'Poster for the Indonesian Independence Day Competition at Pertamina Subang Field' },
+        { imgSrc: require('@/assets/Karya7.jpg'), title: 'Graphic Design', description: 'Social Media Marketing Poster' },
+        { imgSrc: require('@/assets/Karya8.jpg'), title: 'Graphic Design', description: 'Poster for a Joint Movie Screening of the G30S/PKI Film' },
+        { imgSrc: require('@/assets/Porto-Newsbite.png'), title: 'WebDev', description: 'My news website built using HTML, CSS, Vue.js as the framework, Express.js for the backend, and MySQL.' },
+        { imgSrc: require('@/assets/Porto-znafian.png'), title: 'WebDev', description: 'My portfolio website built using HTML, CSS, and Vue.js as the framework.' }
       ],
       filteredWorks: [],
       selectedCategory: 'All Projects'
@@ -59,6 +59,23 @@ export default {
   },
   mounted() {
     this.filterWorks('All Projects'); // Tampilkan semua karya pada awalnya dan atur sebagai default
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    this.$nextTick(() => {
+      this.$refs.portfolioSection.querySelectorAll('.col').forEach(col => {
+        observer.observe(col);
+      });
+    });
   },
   methods: {
     filterWorks(category) {
@@ -68,12 +85,40 @@ export default {
       } else {
         this.filteredWorks = this.works.filter(work => work.title === category);
       }
+
+      this.$nextTick(() => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1
+        });
+
+        this.$refs.portfolioSection.querySelectorAll('.col').forEach(col => {
+          observer.observe(col);
+        });
+      });
     }
   }
 }
 </script>
 
 <style scoped>
+.col {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 1s, opacity 1s;
+}
+
+.col.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 section {
   padding: 100px 18%;
   color: #ffffff;
@@ -132,7 +177,7 @@ section {
   background-color: #a35600;
 }
 
-.portfolio-content {
+.portfolioContent {
   overflow-x: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, auto));
@@ -237,7 +282,7 @@ section {
     font-size: 1rem;
   }
 
-  .portfolio-content {
+  .portfolioContent {
     grid-template-columns: 1fr;
   }
 }
