@@ -10,26 +10,53 @@
     <div class="heading-2">
       <h2>Education Background</h2>
     </div>
-    <div class="container">
+    <div class="container animate" ref="educationSection">
       <div class="education-text">
         <div>
           <img class="education-img" :src="require('@/assets/Lambang ITS.png')" alt="Logo" />
         </div>
-          <h3>Sepuluh Nopember Institute of Technology</h3>
-          <h2>2022-Now</h2>
-          <p>Currently, I am a student at Sepuluh Nopember Institute of Technology (ITS), majoring in Information Technology, class of 2022. I am currently in my 5th semester and continue to strive to develop my skills and knowledge in the field of information technology.</p>
+        <h3>Sepuluh Nopember Institute of Technology</h3>
+        <h2>2022-Now</h2>
+        <p>Currently, I am a student at Sepuluh Nopember Institute of Technology (ITS), majoring in Information Technology, class of 2022. I am currently in my 5th semester and continue to strive to develop my skills and knowledge in the field of information technology.</p>
       </div>
     </div>
   </section>
 </template>
-  
+
 <script>
-  export default {
-    name: 'EducationMenu'
-  }
+export default {
+  name: 'EducationMenu',
+  mounted() {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    this.$refs.educationSection.querySelectorAll('.education-text').forEach(container => {
+      observer.observe(container);
+    });
+  },
+}
 </script>
+
   
 <style scoped>
+.container .education-text {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.container .education-text.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 2s, opacity 2s;
+}
 
 .education {
   background-color: #393E46;
@@ -136,79 +163,78 @@
   line-height: 2rem;
   margin: 0.5rem 0 .5rem;
 }
-  @media (max-width: 1366px) {
-    .heading p{
-      font-size: 1.8rem;
-    }
-    .heading .words span {
-      font-size: 1.8rem;
-    }
-    .heading-2 h2 {
-      font-size: 2.2rem;
-    }
-    
-    .education img{
-      width: 125px;
-      height: 125px;
-    }
-    .education-text h3 {
-      font-size: 1.6rem;
-    }
-    .education-text h2 {
-      font-size: 1rem;
-    }
-    .education-text p {
-      font-size: 1.2rem;
-    }
+@media (max-width: 1366px) {
+  .heading p{
+    font-size: 1.8rem;
   }
-  @media (max-width: 768px) {
-    .heading p{
-      font-size: 1.6rem;
-    }
-    .heading .words span {
-      font-size: 1.6rem;
-    }
-    .heading-2 h2 {
-      font-size: 2rem;
-    }
-    .education img{
-      width: 100px;
-      height: 100px;
-    }
-    .education-text h3 {
-      font-size: 1.4rem;
-    }
-    .education-text h2 {
-      font-size: .8rem;
-    }
-    
-    .education-text p {
-      font-size: 1rem;
-    }
-    .container {
-      flex-direction: column;
-      align-items: center;
-    }
-}
+  .heading .words span {
+    font-size: 1.8rem;
+  }
+  .heading-2 h2 {
+    font-size: 2.2rem;
+  }
   
-  @media (max-width: 450px) {
-    .heading p{
-      font-size: 1.4rem;
-    }
-    .heading .words span {
-      font-size: 1.4rem;
-    }
-    .heading-2 h2 {
-      font-size: 2rem;
-    }
-    .education-text h3 {
+  .education img{
+    width: 125px;
+    height: 125px;
+  }
+  .education-text h3 {
+    font-size: 1.6rem;
+  }
+  .education-text h2 {
+    font-size: 1rem;
+  }
+  .education-text p {
     font-size: 1.2rem;
   }
-    .education-text h2 {
-      font-size: .7rem;
-    }
-    .education-text p {
-      font-size: .8rem;
-    }
+}
+@media (max-width: 768px) {
+  .heading p{
+    font-size: 1.6rem;
+  }
+  .heading .words span {
+    font-size: 1.6rem;
+  }
+  .heading-2 h2 {
+    font-size: 2rem;
+  }
+  .education img{
+    width: 100px;
+    height: 100px;
+  }
+  .education-text h3 {
+    font-size: 1.4rem;
+  }
+  .education-text h2 {
+    font-size: .8rem;
+  }
+  
+  .education-text p {
+    font-size: 1rem;
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 450px) {
+  .heading p{
+    font-size: 1.4rem;
+  }
+  .heading .words span {
+    font-size: 1.4rem;
+  }
+  .heading-2 h2 {
+    font-size: 2rem;
+  }
+  .education-text h3 {
+    font-size: 1.2rem;
+  }
+  .education-text h2 {
+    font-size: .7rem;
+  }
+  .education-text p {
+    font-size: .8rem;
+  }
 }
 </style>
