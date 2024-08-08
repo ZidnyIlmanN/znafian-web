@@ -1,13 +1,13 @@
 <template>
   <section class="home" id="home">
     <div class="home-text">
-      <h3>Hello, I'm</h3>
+      <h3 class="animated-text">Hello, I'm</h3>
       <h1 class="animated-text">Zidny Ilman Nafi'an</h1>
       <h5>Students of <span>Sepuluh Nopember Institute of Technology</span></h5>
-      <p>I am a Sepuluh Nopember Institute of Technology (ITS) student, majoring in Information Technology class of 2022</p>
+      <p class="animated-text">I am a Sepuluh Nopember Institute of Technology (ITS) student, majoring in Information Technology class of 2022</p>
     </div>
     <div class="aing">
-      <img :src="require('@/assets/pict-home.png')" alt="pict-home" />
+      <img :src="require('@/assets/pict-home.png')" alt="pict-home" class="animated-img"/>
     </div>
     <div class="buttons">
       <button @click="downloadCV" class="btn btn-download">Download CV</button>
@@ -52,9 +52,18 @@ export default {
     toggleContact() {
       this.showContact = !this.showContact;
     }
+  },
+  mounted() {
+    const elements = document.querySelectorAll('.animated-text, .animated-img');
+    elements.forEach((el, index) => {
+      setTimeout(() => {
+        el.classList.add('fade-in');
+      }, index * 300); // delay each element's animation
+    });
   }
 }
 </script>
+
 
 <style scoped>
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
@@ -72,7 +81,7 @@ section {
   align-items: center;
   gap: 4rem;
   position: relative;
-  padding-bottom: 60px; /* Menambah padding bawah untuk ruang tombol */
+  padding-bottom: 60px;
 }
 
 .home-text h1 {
@@ -145,7 +154,7 @@ span {
   justify-content: center;
   margin: 20px 0;
   position: absolute;
-  bottom: 10px; /* Mengurangi jarak ke bawah halaman */
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -153,7 +162,6 @@ span {
 .btn {
   padding: 10px 20px;
   background-color: transparent;
-  
   color: #c16d00;
   border-radius: 25px;
   cursor: pointer;
@@ -163,7 +171,6 @@ span {
 }
 
 .btn-download {
-  
   color: #fff;
 }
 
@@ -226,6 +233,39 @@ span {
 
 .contact-content ul li a:hover {
   color: #a55d00;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.animated-text{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-in-out;
+}
+
+.animated-img {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 @keyframes fade-in {
