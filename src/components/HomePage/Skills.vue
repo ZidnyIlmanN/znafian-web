@@ -1,15 +1,14 @@
-works: [
-  <template>
+<template>
   <!-- Sub Service -->
   <section class="service" id="myskill">
-    <div class="heading">
+    <div class="heading" >
       <span>My Skills</span>
       <h2>Skills I Possess</h2>
     </div>
   </section>
 
   <div class="service-carousel">
-    <div class="service-container">
+    <div class="service-container" ref="serviceContainer">
       <div class="box" v-for="(skill, index) in skills" :key="index">
         <div class="box-img">
           <img :src="skill.imgSrc" :alt="skill.altText">
@@ -20,8 +19,6 @@ works: [
     </div>
   </div>
 </template>
-
-
 
 <script>
 export default {
@@ -61,11 +58,25 @@ export default {
         }
       ]
     };
+  },
+  mounted() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    this.$refs.serviceContainer.querySelectorAll('.box').forEach(box => {
+      observer.observe(box);
+    });
   }
 }
 </script>
-
-
 
 <style scoped>
 .service {
@@ -135,10 +146,19 @@ export default {
   border-radius: 0.8rem;
   transition: transform 0.3s, background 0.3s;
   scroll-snap-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.service-container .box.animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 1s, opacity 1s;
 }
 
 .service-container .box:hover {
   transform: scale(1.05);
+  transition: .5s;
   background: #ffb300;
 }
 
