@@ -1,4 +1,7 @@
-import { createApp } from 'vue';
-import App from './App.vue';
+import { createApp } from 'vue'
+import App from './views/HomeView.vue'
+import { inject } from '@vercel/analytics';
 
-createApp(App).mount('#app');
+// Panggil fungsi inject untuk menambahkan skrip pelacakan
+inject();
+createApp(App).mount('#app')
