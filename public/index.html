@@ -20,6 +20,16 @@
         <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
+    <!-- Vercel Web Analytics -->
+    <script>
+        (function(w,d,s,o,f,js,fjs){
+            w[o]=w[o]||function(){
+                (w[o].q=w[o].q||[]).push(arguments)
+            },js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];
+            js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);
+        }(window,document,'script','vercel','https://cdn.vercel-analytics.com/track.js'));
+     vercel('init', { projectId: 'YOUR_PROJECT_ID' });
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
 </body>
 </html>
