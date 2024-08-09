@@ -51,6 +51,24 @@ export default {
           description: 'Canva is another editing app that I master.'
         },
         {
+          imgSrc: require('@/assets/vscode.svg'),
+          altText: 'vscode',
+          title: 'Visual Studio Code',
+          description: 'I frequently use Visual Studio Code as my main development editor.'
+        },
+        {
+          imgSrc: require('@/assets/HTML.svg'),
+          altText: 'HTML',
+          title: 'HTML',
+          description: 'Highly skilled in HTML for creating clean, semantic web structures.'
+        },
+        {
+          imgSrc: require('@/assets/CSS.svg'),
+          altText: 'CSS',
+          title: 'CSS',
+          description: ' Proficient in CSS, crafting responsive designs and complex layouts with precision.'
+        },
+        {
           imgSrc: require('@/assets/vuejs.png'),
           altText: 'Vue.js',
           title: 'Vue.js',
