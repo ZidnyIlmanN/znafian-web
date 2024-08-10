@@ -21,7 +21,7 @@
             <li><a :href="links.whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
             <li><a :href="links.linkedin" target="_blank"><i class="fab fa-linkedin"></i></a></li>
             <li><a :href="links.github" target="_blank"><i class="fab fa-github"></i></a></li>
-            <li><a :href="links.instagram" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            <!-- <li><a :href="links.instagram" target="_blank"><i class="fab fa-instagram"></i></a></li> -->
             <li><a :href="links.twitter" target="_blank"><i class="fab fa-twitter"></i></a></li>
           </ul>
         </div>
