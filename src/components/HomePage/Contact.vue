@@ -13,7 +13,7 @@
         <div class="social">
             <a href="https://github.com/ZidnyIlmanN" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>  </a>
             <a href="https://www.linkedin.com/in/zidny-ilman-2648b9248" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/jidniin/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <!-- <a href="https://www.instagram.com/jidniin/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a> -->
             <a href="https://twitter.com/lilmann02" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
             <a href="https://wa.me/081324327350" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
         </div>
