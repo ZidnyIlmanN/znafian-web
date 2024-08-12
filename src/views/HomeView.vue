@@ -60,4 +60,16 @@ body {
     background-color: var(--bg);
     min-height: 2000px;
 }
+::-webkit-scrollbar{
+    width: 15px;
+}
+
+::-webkit-scrollbar-track{
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb{
+    background: #c16d00;
+    border-radius: 10px;
+}
 </style>
