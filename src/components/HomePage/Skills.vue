@@ -199,7 +199,7 @@ export default {
 
 .service-container .box p {
   color: #2f2f2f;
-  font-size: 1.4rem;
+  font-size: 1rem;
   margin: 1rem 0;
 }
 
@@ -224,7 +224,7 @@ export default {
     font-size: 1.6rem;
   }
   .service-container .box p {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
