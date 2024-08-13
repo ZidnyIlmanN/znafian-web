@@ -43,6 +43,15 @@ export default {
 :root {
     --primary: #c16d00;
     --bg: #222831;
+    --primary: #c16d00;
+    --bg: #222831;
+    --accent: #ffb347;
+    --secondary: #393e46;
+    --text-light: #eeeeee;
+    --text-dark: #222831;
+    --width: 100px;
+    --height: 50px;
+    --quantity: 8;
 }
 
 * {
