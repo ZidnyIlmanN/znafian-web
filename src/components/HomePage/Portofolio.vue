@@ -65,15 +65,15 @@ export default {
           imgSrc: require('@/assets/Porto-Newsbite.png'), 
           title: 'WebDev', 
           description: 'My news website built using HTML, CSS, Vue.js as the framework, Express.js for the backend, and MySQL.',
-          githubUrl: 'https://github.com/username/newsbite-repo', // Ganti dengan URL repositori GitHub
-          websiteUrl: 'https://newsbite.example.com' // Ganti dengan URL website Anda
+          githubUrl: 'https://github.com/ZidnyIlmanN/NewsBite', // Ganti dengan URL repositori GitHub
+          websiteUrl: 'https://news-bite2.vercel.app/' // Ganti dengan URL website Anda
         },
         { 
           imgSrc: require('@/assets/Porto-znafian.png'), 
           title: 'WebDev', 
           description: 'My portfolio website built using HTML, CSS, and Vue.js as the framework.',
-          githubUrl: 'https://github.com/username/portfolio-repo', // Ganti dengan URL repositori GitHub
-          websiteUrl: 'https://znafian.example.com' // Ganti dengan URL website Anda
+          githubUrl: 'https://github.com/ZidnyIlmanN/znafian-web', // Ganti dengan URL repositori GitHub
+          websiteUrl: 'https://znafian-web.vercel.app/' // Ganti dengan URL website Anda
         }
       ],
       filteredWorks: [],
