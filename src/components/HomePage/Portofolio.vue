@@ -28,6 +28,17 @@
         <div class="layer">
           <h3>{{ work.title }}</h3>
           <p>{{ work.description }}</p>
+          <!-- Hanya tampilkan ikon GitHub dan panah untuk kategori WebDev -->
+          <div v-if="work.title === 'WebDev'" class="icons">
+            <a :href="work.githubUrl" target="_blank" class="icon-link">
+              <i class="fab fa-github icon"></i>
+              <span>Repository</span>
+            </a>
+            <a :href="work.websiteUrl" target="_blank" class="icon-link">
+              <i class="fas fa-chevron-right icon"></i>
+              <span>Website</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -50,8 +61,20 @@ export default {
         { imgSrc: require('@/assets/Karya6.jpg'), title: 'Graphic Design', description: 'Poster for the Indonesian Independence Day Competition at Pertamina Subang Field' },
         { imgSrc: require('@/assets/Karya7.jpg'), title: 'Graphic Design', description: 'Social Media Marketing Poster' },
         { imgSrc: require('@/assets/Karya8.jpg'), title: 'Graphic Design', description: 'Poster for a Joint Movie Screening of the G30S/PKI Film' },
-        { imgSrc: require('@/assets/Porto-Newsbite.png'), title: 'WebDev', description: 'My news website built using HTML, CSS, Vue.js as the framework, Express.js for the backend, and MySQL.' },
-        { imgSrc: require('@/assets/Porto-znafian.png'), title: 'WebDev', description: 'My portfolio website built using HTML, CSS, and Vue.js as the framework.' }
+        { 
+          imgSrc: require('@/assets/Porto-Newsbite.png'), 
+          title: 'WebDev', 
+          description: 'My news website built using HTML, CSS, Vue.js as the framework, Express.js for the backend, and MySQL.',
+          githubUrl: 'https://github.com/username/newsbite-repo', // Ganti dengan URL repositori GitHub
+          websiteUrl: 'https://newsbite.example.com' // Ganti dengan URL website Anda
+        },
+        { 
+          imgSrc: require('@/assets/Porto-znafian.png'), 
+          title: 'WebDev', 
+          description: 'My portfolio website built using HTML, CSS, and Vue.js as the framework.',
+          githubUrl: 'https://github.com/username/portfolio-repo', // Ganti dengan URL repositori GitHub
+          websiteUrl: 'https://znafian.example.com' // Ganti dengan URL website Anda
+        }
       ],
       filteredWorks: [],
       selectedCategory: 'All Projects'
@@ -233,6 +256,45 @@ section {
   margin-top: 1rem;
   transition: transform 0.3s, opacity 0.3s;
 }
+.icons {
+  padding: 10px 15px;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background-color: rgba(34, 40, 49, 0.5);
+  backdrop-filter: blur(2rem);
+  border-radius: 40px;
+}
+
+.icon-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.icon {
+  font-size: 32px;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.icon-link:hover .icon {
+  transform: scale(1.2);
+  color: var(--primary);
+}
+
+.icon-link span {
+  font-size: 0.9rem;
+  color: #c0c0c0;
+  transition: color 0.3s ease;
+}
+
+.icon-link:hover span {
+  color: var(--primary);
+}
 
 @media (max-width: 1366px) {
   .heading h3 {
@@ -267,6 +329,19 @@ section {
   .menu button{
     font-size: .6rem;
   }
+  .icons {
+    padding: 8px 12px;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  .icon {
+    font-size: 24px;
+  }
+
+  .icon-link span {
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 450px) {
@@ -284,6 +359,18 @@ section {
 
   .portfolioContent {
     grid-template-columns: 1fr;
+  }
+  .icons {
+    padding: 6px 10px;
+    gap: 0.5rem;
+  }
+
+  .icon {
+    font-size: 20px;
+  }
+
+  .icon-link span {
+    font-size: 0.7rem;
   }
 }
 </style>
