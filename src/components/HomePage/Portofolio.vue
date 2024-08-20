@@ -32,11 +32,11 @@
           <div v-if="work.title === 'WebDev'" class="icons">
             <a :href="work.githubUrl" target="_blank" class="icon-link">
               <i class="fab fa-github icon"></i>
-              <span>Repository</span>
+              
             </a>
             <a :href="work.websiteUrl" target="_blank" class="icon-link">
               <i class="fas fa-chevron-right icon"></i>
-              <span>Website</span>
+              
             </a>
           </div>
         </div>
@@ -61,6 +61,7 @@ export default {
         { imgSrc: require('@/assets/Karya6.jpg'), title: 'Graphic Design', description: 'Poster for the Indonesian Independence Day Competition at Pertamina Subang Field' },
         { imgSrc: require('@/assets/Karya7.jpg'), title: 'Graphic Design', description: 'Social Media Marketing Poster' },
         { imgSrc: require('@/assets/Karya8.jpg'), title: 'Graphic Design', description: 'Poster for a Joint Movie Screening of the G30S/PKI Film' },
+        { imgSrc: require('@/assets/Karya11.jpg'), title: 'Graphic Design', description: 'Poster Kultum Subuh M. Natsir' },
         { 
           imgSrc: require('@/assets/Porto-Newsbite.png'), 
           title: 'WebDev', 
@@ -277,7 +278,6 @@ section {
 
 .icon {
   font-size: 32px;
-  margin-bottom: 0.5rem;
   transition: transform 0.3s ease;
 }
 
