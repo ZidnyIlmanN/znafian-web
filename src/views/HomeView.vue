@@ -70,7 +70,7 @@ body {
     min-height: 2000px;
 }
 ::-webkit-scrollbar{
-    width: 15px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track{
