@@ -4,7 +4,7 @@
     
     <main class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
       <!-- Breadcrumbs -->
-      <nav class="pt-24 md:pt-28 pb-4" aria-label="Breadcrumb">
+      <nav class="pt-8 md:pt-12 pb-4" aria-label="Breadcrumb">
         <ol class="flex items-center gap-2 font-label-caps text-label-caps text-on-surface-variant">
           <li><router-link to="/" class="hover:text-primary transition-colors">Home</router-link></li>
           <li><span class="material-symbols-outlined text-[12px] text-outline mx-1">chevron_right</span></li>

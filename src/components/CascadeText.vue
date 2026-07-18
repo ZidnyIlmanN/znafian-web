@@ -4,27 +4,51 @@
       v-for="(text, textIdx) in texts"
       :key="textIdx"
       class="flex whitespace-pre"
-      :class="textIdx === currentIndex ? 'relative' : 'absolute left-0 top-0'"
+      :class="textIdx === currentIndex ? 'relative z-10' : 'absolute left-0 top-0 z-0'"
+      :style="{ visibility: (textIdx === currentIndex || textIdx === prevIndex) ? 'visible' : 'hidden' }"
     >
-      <span
-        v-for="(char, charIdx) in getChars(text)"
-        :key="charIdx"
-        class="inline-block will-change-transform"
-        :style="getCharStyle(textIdx, charIdx)"
-      >
-        {{ char === ' ' ? '\u00A0' : char }}
-      </span>
+      <template v-for="(segment, segIdx) in getSegments(text)" :key="segIdx">
+        <GradientText v-if="segment.isGradient">
+          <span
+            v-for="(charObj, idx) in segment.chars"
+            :key="idx"
+            class="inline-block will-change-transform"
+            :style="getCharStyle(textIdx, charObj.globalIdx)"
+          >
+            {{ charObj.char === ' ' ? '\u00A0' : charObj.char }}
+          </span>
+        </GradientText>
+        <template v-else>
+          <span
+            v-for="(charObj, idx) in segment.chars"
+            :key="idx"
+            class="inline-block will-change-transform"
+            :style="getCharStyle(textIdx, charObj.globalIdx)"
+          >
+            {{ charObj.char === ' ' ? '\u00A0' : charObj.char }}
+          </span>
+        </template>
+      </template>
     </span>
   </span>
 </template>
 
 <script>
+import GradientText from './GradientText.vue'
+
 export default {
   name: 'CascadeText',
+  components: {
+    GradientText
+  },
   props: {
     texts: {
       type: Array,
       required: true
+    },
+    gradientWords: {
+      type: Array,
+      default: () => []
     },
     duration: {
       type: Number,
@@ -47,12 +71,42 @@ export default {
     return {
       currentIndex: 0,
       prevIndex: -1,
-      timer: null
+      timer: null,
+      animTimeout: null
     }
   },
   methods: {
-    getChars(text) {
-      return text.split('');
+    getSegments(text) {
+      if (!this.gradientWords || this.gradientWords.length === 0) {
+        return [{
+          isGradient: false,
+          chars: text.split('').map((char, index) => ({ char, globalIdx: index }))
+        }];
+      }
+
+      const sortedWords = [...this.gradientWords].sort((a, b) => b.length - a.length);
+      const escapedWords = sortedWords.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+      const regex = new RegExp(`(${escapedWords.join('|')})`, 'g');
+
+      const parts = text.split(regex);
+      let globalIdx = 0;
+      const segments = [];
+
+      for (let i = 0; i < parts.length; i++) {
+        const part = parts[i];
+        if (!part) continue;
+
+        const isGradient = sortedWords.includes(part);
+        const chars = part.split('').map(char => {
+          const obj = { char, globalIdx };
+          globalIdx++;
+          return obj;
+        });
+
+        segments.push({ isGradient, chars });
+      }
+
+      return segments;
     },
     getCharStyle(textIdx, charIdx) {
       const isCurrent = textIdx === this.currentIndex;
@@ -84,10 +138,16 @@ export default {
     this.timer = setInterval(() => {
       this.prevIndex = this.currentIndex;
       this.currentIndex = (this.currentIndex + 1) % this.texts.length;
+      
+      clearTimeout(this.animTimeout);
+      this.animTimeout = setTimeout(() => {
+        this.prevIndex = -1;
+      }, this.duration + (50 * this.staggerDelay)); // reset after characters slide out
     }, this.interval);
   },
   beforeUnmount() {
     if (this.timer) clearInterval(this.timer);
+    if (this.animTimeout) clearTimeout(this.animTimeout);
   }
 }
 </script>

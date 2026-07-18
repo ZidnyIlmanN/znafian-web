@@ -7,9 +7,9 @@
       <section id="about" class="py-24 swiss-grid hairline-b">
         <div class="col-span-12 md:col-span-7 flex flex-col justify-center gap-8">
           <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl max-w-2xl flex flex-col">
-            <CascadeText :texts="['Hello, I\'am', 'Crafting digital']" />
-            <CascadeText :texts="['Zidny Ilman Nafi\'an', 'solutions that drive']" />
-            <CascadeText :texts="['Software Engineer', 'business value.']" />
+            <CascadeText :texts="['Hello, I\'am', 'Crafting digital']" :gradientWords="['digital', 'solutions', 'Software Engineering']" />
+            <CascadeText :texts="['Zidny Ilman Nafi\'an', 'solutions that drive']" :gradientWords="['digital', 'solutions', 'Software Engineering']" />
+            <CascadeText :texts="['Software Engineering', 'business value.']" :gradientWords="['digital', 'solutions', 'Software Engineering']" />
           </h1>
           <p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
             I help businesses build scalable web applications and digital products, from initial concept to deployment and maintenance.
@@ -111,8 +111,8 @@
       </section>
 
       <!-- Selected Projects -->
-      <section class="py-24 swiss-grid">
-        <div class="col-span-12 md:col-span-4 sticky top-32 h-fit">
+      <section class="py-24 swiss-grid md:gap-y-0">
+        <div class="col-span-full md:col-span-4 relative md:sticky md:top-32 h-fit md:z-10 pb-4 md:pb-0">
           <div class="flex flex-col gap-6">
             <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">03 / Selected Projects</span>
             <h2 class="font-display-lg text-display-lg">Featured Work</h2>
@@ -120,20 +120,20 @@
             <router-link to="/projects" class="bg-primary text-on-primary px-6 py-3 font-label-caps text-label-caps uppercase w-fit mt-4 inline-block">See All Work</router-link>
           </div>
         </div>
-        <div class="col-span-12 md:col-span-8 flex flex-col gap-24">
+        <div class="col-span-full md:col-span-8 flex flex-col gap-24 mt-8 md:mt-0">
           <!-- Featured Projects -->
           <div class="flex flex-col gap-6 group" v-for="project in featuredProjects" :key="project.id">
             <div class="aspect-video rounded-[3rem] overflow-hidden hairline-t hairline-r hairline-b hairline-l">
               <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" :alt="project.title" :src="project.cover"/>
             </div>
-            <div class="flex justify-between items-end border-b border-outline-variant pb-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-outline-variant pb-6 gap-4 md:gap-0">
               <div>
                 <h3 class="font-headline-md text-headline-md">{{ project.title }}</h3>
                 <p class="font-body-md text-body-md text-on-surface-variant">{{ project.category }}</p>
               </div>
               <div class="flex items-center gap-4">
                 <span class="font-label-caps text-label-caps text-on-surface-variant">{{ project.year || '2024' }}</span>
-                <router-link :to="'/projects/' + project.id" class="font-label-caps text-label-caps underline underline-offset-4 hover:no-underline">View Project</router-link>
+                <router-link :to="'/projects/' + project.id" class="font-label-caps text-label-caps underline underline-offset-4 hover:no-underline whitespace-nowrap">View Project</router-link>
               </div>
             </div>
           </div>
