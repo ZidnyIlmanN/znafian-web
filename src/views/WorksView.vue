@@ -25,8 +25,8 @@
       <section class="py-16 md:py-32">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-y-24 gap-x-gutter">
           <article v-for="(project, index) in projects" :key="project.id" class="project-card flex flex-col group" :class="{ 'md:mt-24': index % 2 !== 0 }">
-            <div class="relative overflow-hidden aspect-[4/3] mb-8">
-              <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out" :alt="project.title" :src="project.cover"/>
+            <div class="relative overflow-hidden aspect-video mb-8">
+              <img class="w-full h-full object-cover transition-all duration-700 ease-in-out" :alt="project.title" :src="project.cover"/>
             </div>
             <div class="flex justify-between items-start border-t border-outline-variant pt-6">
               <div>

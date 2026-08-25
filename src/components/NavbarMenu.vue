@@ -12,7 +12,8 @@
         <router-link to="/contact" class="font-label-caps text-label-caps transition-colors duration-200" :class="isActive('/contact') ? 'text-primary dark:text-on-background font-bold border-b-2 border-primary pb-1' : 'text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-on-background'">Contact</router-link>
       </nav>
 
-      <div class="hidden md:block">
+      <div class="hidden md:flex gap-4 items-center">
+        <a href="/CV_ZidnyIlmanNafi'an_2026_Standar.pdf" download class="border border-primary text-primary px-6 py-2 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all inline-block">Download CV</a>
         <router-link to="/contact" class="bg-primary text-on-primary px-6 py-2 font-label-caps text-label-caps uppercase tracking-widest hover:bg-opacity-90 transition-all inline-block">Let's Talk</router-link>
       </div>
 
@@ -29,6 +30,7 @@
       <router-link @click="isMobileMenuOpen = false" to="/#skills" class="font-label-caps text-label-caps py-2 border-b border-outline-variant/30" :class="isActive('/#skills') ? 'text-primary font-bold' : 'text-on-surface-variant'">Skills</router-link>
       <router-link @click="isMobileMenuOpen = false" to="/projects" class="font-label-caps text-label-caps py-2 border-b border-outline-variant/30" :class="isActive('/projects') ? 'text-primary font-bold' : 'text-on-surface-variant'">Projects</router-link>
       <router-link @click="isMobileMenuOpen = false" to="/contact" class="font-label-caps text-label-caps py-2 border-b border-outline-variant/30" :class="isActive('/contact') ? 'text-primary font-bold' : 'text-on-surface-variant'">Contact</router-link>
+      <a href="/CV_ZidnyIlmanNafi'an_2026_Standar.pdf" download class="border border-primary text-primary px-6 py-4 mt-4 text-center font-label-caps text-label-caps uppercase tracking-widest inline-block w-full">Download CV</a>
       <router-link @click="isMobileMenuOpen = false" to="/contact" class="bg-primary text-on-primary px-6 py-4 mt-2 text-center font-label-caps text-label-caps uppercase tracking-widest inline-block w-full">Let's Talk</router-link>
     </div>
   </header>
