@@ -2,22 +2,24 @@
   <div class="contact-view">
     <NavbarMenu />
     
-    <main class="mt-20">
+    <main class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
       <!-- Hero Section -->
-      <section class="px-margin-mobile md:px-margin-desktop py-24 md:py-32 border-b border-outline-variant">
-        <div class="max-w-container-max mx-auto">
-          <span class="font-label-caps text-label-caps text-secondary mb-8 block">04 // CONTACT</span>
-          <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl max-w-4xl">
-            LET'S TALK
-          </h1>
+      <section class="py-16 md:py-24 border-b border-outline-variant">
+        <div class="swiss-grid">
+          <div class="col-span-full">
+            <span class="font-label-caps text-label-caps text-secondary mb-8 block uppercase tracking-widest">04 // Contact</span>
+            <h1 class="font-display-xl text-display-lg-mobile md:text-display-xl max-w-4xl">
+              LET'S TALK
+            </h1>
+          </div>
         </div>
       </section>
 
       <!-- Split Content Section -->
-      <section class="max-w-container-max mx-auto border-b border-outline-variant">
+      <section class="border-b border-outline-variant">
         <div class="grid grid-cols-1 md:grid-cols-12 min-h-[600px]">
           <!-- Left Column: Info -->
-          <div class="md:col-span-5 px-margin-mobile md:px-margin-desktop py-16 md:py-24 md:border-r border-outline-variant flex flex-col justify-between">
+          <div class="md:col-span-5 py-16 md:py-24 md:pr-12 md:border-r border-outline-variant flex flex-col justify-between">
             <div>
               <div class="mb-16">
                 <span class="font-label-caps text-label-caps text-secondary block mb-4">EMAIL</span>
@@ -48,7 +50,7 @@
           </div>
 
           <!-- Right Column: Form -->
-          <div class="md:col-span-7 px-margin-mobile md:px-margin-desktop py-16 md:py-24 bg-surface-container-lowest">
+          <div class="md:col-span-7 py-16 md:py-24 md:pl-12 bg-surface-container-lowest">
             <form class="space-y-12" @submit.prevent="handleSubmit">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div class="space-y-4">
@@ -82,7 +84,7 @@
       </section>
 
       <!-- Subheadline Section -->
-      <section class="px-margin-mobile md:px-margin-desktop py-24 md:py-48 text-center bg-background">
+      <section class="py-24 md:py-48 text-center bg-background">
         <div class="max-w-4xl mx-auto">
           <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg leading-tight">
             Available for new opportunities and collaborations.

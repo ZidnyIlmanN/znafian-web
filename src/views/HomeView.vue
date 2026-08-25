@@ -204,29 +204,52 @@
             <span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">04 / Selected Projects</span>
             <h2 class="font-display-lg text-display-lg">Featured Work</h2>
             <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xs">Showcasing our standout projects that blend creativity, strategy, and cutting-edge design.</p>
+            
+            <!-- Tabs -->
+            <div class="flex gap-4 mt-2">
+              <button @click="activeTab = 'web'" :class="activeTab === 'web' ? 'text-primary border-b border-primary' : 'text-on-surface-variant hover:text-primary'" class="font-label-caps text-label-caps uppercase pb-1 transition-all">Web Dev</button>
+              <button @click="activeTab = 'design'" :class="activeTab === 'design' ? 'text-primary border-b border-primary' : 'text-on-surface-variant hover:text-primary'" class="font-label-caps text-label-caps uppercase pb-1 transition-all">Graphic Design</button>
+            </div>
+
             <router-link to="/projects" class="bg-primary text-on-primary px-6 py-3 font-label-caps text-label-caps uppercase w-fit mt-4 inline-block">See All Work</router-link>
           </div>
         </div>
         <div class="col-span-full md:col-span-8 flex flex-col gap-24 mt-8 md:mt-0">
-          <!-- Featured Projects -->
-          <div class="flex flex-col gap-6 group" v-for="project in featuredProjects" :key="project.id">
-            <div class="aspect-video rounded-2xl overflow-hidden hairline-t hairline-r hairline-b hairline-l">
-              <img class="w-full h-full object-cover transition-all duration-700" :alt="project.title" :src="project.cover"/>
-            </div>
-            <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-outline-variant pb-6 gap-4 md:gap-0">
-              <div>
-                <h3 class="font-headline-md text-headline-md">{{ project.title }}</h3>
-                <p class="font-body-md text-body-md text-on-surface-variant">{{ project.category }}</p>
+          <!-- Web Projects -->
+          <template v-if="activeTab === 'web'">
+            <div class="flex flex-col gap-6 group" v-for="project in featuredProjects" :key="project.id">
+              <div class="aspect-video rounded-2xl overflow-hidden hairline-t hairline-r hairline-b hairline-l">
+                <img class="w-full h-full object-cover transition-all duration-700" :alt="project.title" :src="project.cover"/>
               </div>
-              <div class="flex items-center gap-4 md:gap-6">
-                <span class="font-label-caps text-label-caps text-on-surface-variant hidden sm:block">{{ project.year || '2024' }}</span>
-                <a v-if="project.link" :href="project.link" target="_blank" rel="noopener noreferrer" class="border border-primary px-4 py-2 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all whitespace-nowrap flex items-center gap-2">
-                  Visit Site <span class="material-symbols-outlined text-[14px]">open_in_new</span>
-                </a>
-                <router-link :to="'/projects/' + project.id" class="font-label-caps text-label-caps underline underline-offset-4 hover:no-underline whitespace-nowrap">View Project</router-link>
+              <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-outline-variant pb-6 gap-4 md:gap-0">
+                <div>
+                  <h3 class="font-headline-md text-headline-md">{{ project.title }}</h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant">{{ project.category }}</p>
+                </div>
+                <div class="flex items-center gap-4 md:gap-6">
+                  <span class="font-label-caps text-label-caps text-on-surface-variant hidden sm:block">{{ project.year || '2024' }}</span>
+                  <a v-if="project.link" :href="project.link" target="_blank" rel="noopener noreferrer" class="border border-primary px-4 py-2 font-label-caps text-label-caps uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all whitespace-nowrap flex items-center gap-2">
+                    Visit Site <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+                  </a>
+                  <router-link :to="'/projects/' + project.id" class="font-label-caps text-label-caps underline underline-offset-4 hover:no-underline whitespace-nowrap">View Project</router-link>
+                </div>
               </div>
             </div>
-          </div>
+          </template>
+
+          <!-- Graphic Design Projects -->
+          <template v-if="activeTab === 'design'">
+            <div class="columns-1 sm:columns-2 gap-6 space-y-6">
+              <div v-for="design in featuredDesigns" :key="design.id" class="break-inside-avoid">
+                <div class="rounded-2xl overflow-hidden hairline-t hairline-r hairline-b hairline-l group relative">
+                  <img class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" :alt="design.title" :src="design.cover"/>
+                  <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                    <span class="text-white font-label-caps text-label-caps tracking-widest uppercase">{{ design.title }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </template>
         </div>
       </section>
 
@@ -245,7 +268,7 @@
 import NavbarMenu from '@/components/NavbarMenu.vue'
 import FooterMenu from '@/components/FooterMenu.vue'
 import CascadeText from '@/components/CascadeText.vue'
-import { projects } from '@/data/projects.js'
+import { projects, graphicDesigns } from '@/data/projects.js'
 
 export default {
   name: 'HomeView',
@@ -256,12 +279,17 @@ export default {
   },
   data() {
     return {
-      projects
+      projects,
+      graphicDesigns,
+      activeTab: 'web'
     }
   },
   computed: {
     featuredProjects() {
       return this.projects.slice(0, 4)
+    },
+    featuredDesigns() {
+      return this.graphicDesigns.slice(0, 6)
     }
   },
   mounted() {

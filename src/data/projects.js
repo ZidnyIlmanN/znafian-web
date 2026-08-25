@@ -144,3 +144,19 @@ export const projects = [
     nextProjectId: 1
   }
 ];
+
+export const graphicDesigns = [
+  { id: 1, title: 'Graphic Design 01', cover: require('@/assets/Karya1.jpg') },
+  { id: 2, title: 'Graphic Design 02', cover: require('@/assets/Karya2.jpg') },
+  { id: 3, title: 'Graphic Design 03', cover: require('@/assets/Karya3.jpg') },
+  { id: 4, title: 'Graphic Design 04', cover: require('@/assets/Karya4.jpg') },
+  { id: 5, title: 'Graphic Design 05', cover: require('@/assets/Karya5.jpg') },
+  { id: 6, title: 'Graphic Design 06', cover: require('@/assets/Karya6.jpg') },
+  { id: 7, title: 'Graphic Design 07', cover: require('@/assets/Karya7.png') },
+  { id: 8, title: 'Graphic Design 08', cover: require('@/assets/Karya8.png') },
+  { id: 9, title: 'Graphic Design 09', cover: require('@/assets/Karya9.jpg') },
+  { id: 10, title: 'Graphic Design 10', cover: require('@/assets/Karya10.png') },
+  { id: 11, title: 'Graphic Design 11', cover: require('@/assets/Karya11.jpg') },
+  { id: 12, title: 'Graphic Design 12', cover: require('@/assets/Karya12.jpg') },
+  { id: 13, title: 'Graphic Design 13', cover: require('@/assets/Karya13.jpg') }
+];
